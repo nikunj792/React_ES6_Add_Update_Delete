@@ -1,5 +1,5 @@
-# ReactComponent
-React Application 
+# React ES6
+Add,Update,Delete Numbers/Strings React Application 
 
 Steps to run the code.
 
@@ -15,6 +15,6 @@ V)On your browser run the "http://localhost:3000/" or in case if that will not w
 
 Functionality of this Code
 
-In this code simple react component in which on submit button data is changed and code is written in es5. 
+In this code User can add number/string that will shown below and after that along with that number/string two buttons will come Update and Delete.So you can delete that number/string or update the same 
 
 Thanks, Nikunj
