@@ -21,7 +21,6 @@ export default class ReactForm extends React.Component{
 	handleButton(e){
 		const value = this.state.val;
 		const arr =this.state.arr;
-		let index = this.state.index;
 		arr.push(value);
 		this.setState({
 			arr
@@ -38,11 +37,10 @@ export default class ReactForm extends React.Component{
 	handleButtonUpdate(e){
 		const updatedValue = prompt("Enter the number you want to update");
 		const arr = this.state.arr;
-		const index = arr.indexOf(e.target.name);
-		arr[index] = updatedValue;
-		this.setState({
-			arr
-		});
+		arr[e.target.name] = updatedValue;
+			this.setState({
+						arr
+					});
 	}
 	render(){
 		return(
@@ -51,11 +49,11 @@ export default class ReactForm extends React.Component{
 			<input type="text" id="val" onChange={(e)=>this.handleInputValue(e)}/><br />
 			<button onClick={this.handleButton}>Add</button><br /><br />
 				{
-						this.state.arr.length>0?this.state.arr.map((val)=>{
+						this.state.arr.length>0?this.state.arr.map((val,index)=>{
 						return([
 									val,
-									<button name={val} onClick={(e)=>this.handleButtonUpdate(e)}>Update</button>,
-									<button name={val} onClick={(e)=>this.handleButtonDelete(e)}>Delete</button>,
+									<button name={index} onClick={(e)=>this.handleButtonUpdate(e)}>Update</button>,
+									<button name={index} onClick={(e)=>this.handleButtonDelete(e)}>Delete</button>,
 									<br />
 								])
 						}):""				
