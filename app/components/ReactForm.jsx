@@ -28,8 +28,7 @@ export default class ReactForm extends React.Component{
 	}
 	handleButtonDelete(e){
 		const arr = this.state.arr;
-		const index = arr.indexOf(e.target.name);
-		arr.splice(index,1);
+		arr.splice(e.target.name,1);
 		this.setState({
 			arr
 		});
